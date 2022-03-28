@@ -38,10 +38,10 @@ async function displayTodos() {
         } else {
             newTodoEl.addEventListener('click', async ()=>{
                 completeTodo(todo.id);
-                displayTodos();
+                
             });
         }
-        
+        displayTodos();
 
         todosEl.append(newTodoEl);
     }
