@@ -22,6 +22,8 @@ todoForm.addEventListener('submit', async(e) => {
     await createTodo(data.get('todo'));
     //console.log(data.get('todo'));
     await displayTodos();
+
+    todoForm.reset();
 });
 
 async function displayTodos() {
@@ -65,6 +67,6 @@ logoutButton.addEventListener('click', () => {
 deleteButton.addEventListener('click', async () => {
     // delete all todos
     await deleteAllTodos();
-    displayTodos();
+    await displayTodos();
     // then refetch and display the updated list of todos
 });
