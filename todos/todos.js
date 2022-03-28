@@ -25,12 +25,23 @@ todoForm.addEventListener('submit', async(e) => {
 });
 
 async function displayTodos() {
+    todosEl.textContent = '';
     // fetch the todos
     const currentTodos = await getTodos();
     //console.log(currentTodos);
     // display the list of todos
     for (let todo of currentTodos){
         const newTodoEl = renderTodo(todo);
+
+        if (todo.complete){
+            newTodoEl.classList.add('complete');
+        } else {
+            newTodoEl.addEventListener('click', async ()=>{
+                completeTodo(todo.id);
+                displayTodos();
+            });
+        }
+        
 
         todosEl.append(newTodoEl);
     }
