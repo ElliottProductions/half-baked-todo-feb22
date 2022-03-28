@@ -16,7 +16,7 @@ const logoutButton = document.querySelector('#logout');
 const deleteButton = document.querySelector('.delete-button');
 const loadSpinner = document.querySelector('.loading');
 
-todoForm.addEventListener('submit', async(e) => {
+todoForm.addEventListener('submit', async (e) => {
     // on submit, create a todo, reset the form, and display the todos
     e.preventDefault();
     const data = new FormData(todoForm);
@@ -60,7 +60,7 @@ async function displayTodos() {
 }
 
 // add an on load listener that fetches and displays todos on load
-window.addEventListener('load', async()=>{
+window.addEventListener('load', async ()=>{
     displayTodos();
     loadSpinner.classList.add('invisible');
 });
