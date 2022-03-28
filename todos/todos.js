@@ -33,15 +33,20 @@ async function displayTodos() {
     for (let todo of currentTodos){
         const newTodoEl = renderTodo(todo);
 
+        
         if (todo.complete){
             newTodoEl.classList.add('complete');
         } else {
-            newTodoEl.addEventListener('click', async ()=>{
-                completeTodo(todo.id);
+            newTodoEl.addEventListener('click', async ()=>{ 
+                await completeTodo(todo.id);
                 
+                await displayTodos(); 
             });
+            
         }
-        displayTodos();
+            
+        
+        
 
         todosEl.append(newTodoEl);
     }
