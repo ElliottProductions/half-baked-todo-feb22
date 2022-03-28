@@ -21,7 +21,7 @@ todoForm.addEventListener('submit', async(e) => {
     e.preventDefault();
     const data = new FormData(todoForm);
     await createTodo(data.get('todo'));
-    //console.log(data.get('todo'));
+ 
     await displayTodos();
 
     todoForm.reset();
@@ -32,7 +32,7 @@ async function displayTodos() {
     loadSpinner.classList.remove('invisible');
     // fetch the todos
     const currentTodos = await getTodos();
-    //console.log(currentTodos);
+   
     // display the list of todos
     for (let todo of currentTodos){
         const newTodoEl = renderTodo(todo);
