@@ -31,6 +31,13 @@
     margin: 10px;
 }
 
+.todo:hover {
+    background-color: lightgreen;
+    width: 80%;
+    font-size: 2rem;
+    margin: 10px;
+}
+
 .incomplete {
     cursor: pointer;
 }
