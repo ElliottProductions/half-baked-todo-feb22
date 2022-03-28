@@ -36,3 +36,10 @@ You will be creating a to do list using Supabase. Users should only be able to p
 | Users can add todos to the database                   | 2.5    |
 | Users can complete todos                              | 2.5    |
 | Users can delete all todos                            | 2.5    |
+
+# Events
+-form submit: send and object with todo: formInput
+-get all todos rows
+-clear out and the display all todos rows
+-on click button deletes all todos
+-on click of clickable list of items they become "complete"
